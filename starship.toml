@@ -1,0 +1,258 @@
+# Which is equivalent to
+format = """
+$character\
+$time\
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$status\
+$os\
+$container\
+$shell"""
+
+[line_break]
+disabled = true
+
+[directory]
+format = "[$path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"~" = " ~"
+
+[time]
+disabled = false
+format = ' [$time]($style) '
+time_format = '%T'
+
+[username]
+style_user = 'white bold'
+style_root = 'black bold'
+format = '\[[$user]($style)\] '
+disabled = false
+show_always = true
+
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[󱓇](red)"
+vicmd_symbol = "[󱓈](green)"
+
+[git_branch]
+symbol = ""
+style = "fg:#a6e3a1 bg:#353446"
+format = '[ $symbol $branch(:$remote_branch) ]($style)'
+
+[git_status]
+style = "fg:#a6e3a1 bg:#353446"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+deleted = "x"
+format = '[$all_status$ahead_behind ]($style)'
+
+[aws]
+symbol = " "
+style = "fg:#D3C6AA bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[conda]
+symbol = ""
+style = "fg:#D3C6AA bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[dart]
+symbol = ""
+style = "fg:#D3C6AA bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[c]
+symbol = ""
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[docker_context]
+symbol = ""
+style = "fg:#D3C6AA bg:#3E3D4F"
+format = '[ $symbol $context]($style) $path '
+
+[elixir]
+symbol = ""
+style = "fg:#D3C6AA bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[elm]
+symbol = ""
+style = "fg:#D3C6AA bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[golang]
+symbol = "ﳑ"
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[haskell]
+symbol = "λ"
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[java]
+symbol = ""
+style = "fg:#D3C6AA bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[julia]
+symbol = ""
+style = "fg:#D3C6AA bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[lua]
+symbol = ""
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[nim]
+symbol = ""
+style = "fg:#D3C6AA bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[nix_shell]
+symbol = ""
+style = "fg:#D3C6AA bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[perl]
+symbol = ""
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[php]
+symbol = ""
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[python]
+symbol = ""
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[ruby]
+symbol = ""
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[rust]
+symbol = "🦀"
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[swift]
+symbol = "ﯣ"
+style = "fg:#A7C080 bg:#3E3D4F"
+format = '[ $symbol ($version )]($style)'
+
+[package]
+symbol = ""
+style = "fg:#A7C080 bg:#3E3D4F"
+format = "[ $symbol $version]($style)"
+disabled = true
+
+[battery]
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+unknown_symbol = " "
+empty_symbol = " "
+format = "[ $symbol$percentage ]($style bg:#333a56)"
+disabled = true
+
+[[battery.display]]
+threshold = 15
+style = "bold fg:#CAA9E0"
+
+[[battery.display]]
+threshold = 50
+style = "fg:#f9e2af"
+
+[[battery.display]]
+threshold = 101
+style = "bold #a6e3a1"
