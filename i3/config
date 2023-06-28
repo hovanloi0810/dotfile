@@ -245,13 +245,15 @@ for_window [class="chrome"] move to workspace $ws2
 for_window [class="notion"] move to workspace $ws3
 for_window [class="Code"] move to workspace $ws4
 
+for_window [class="Yad" title="yad-calendar"] floating enable
+
 # Alt tab 2 workspace lastest
 bindsym $mod+Tab workspace back_and_forth
 
 # Display Wallper + auto change Wallper
 exec_always feh --bg-fill /home/hnitoct/.config/walls/nature/forest.jpg
 # exec --no-startup-id feh --randomize --bg-fill/home/hnitoct/.config/walls/nature/*
-bindsym $mod+b exec --no-startup-id feh ~/.config/walls/architecture/* --recursive --randomize --bg-fill
+bindsym $mod+b exec --no-startup-id feh ~/.config/walls/nature/* --recursive --randomize --bg-fill
 
 # Keybinding for i3lock
 # bindsym $mod+x exec --no-startup-id $HOME.config/scripts/lock
